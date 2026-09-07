@@ -8,7 +8,7 @@ export function validateOrReturnOriginal(originalWord, mappedString) {
     bb: ['ˈbː', 'ˌbː', 'bː'],
     b: ['b', 'ˈb', 'ˌb', 'ˈbː', 'ˌbː', 'bː'],
     cci: ['ˈtʃː', 'ˌtʃː', 'tʃː'],
-    cch: ['kː', 'ˈkː'],
+    cch: ['ˈkː', 'ˌkː', 'kː'],
     cc: ['ˈkː', 'kː', 'ˈtʃː', 'tʃː'],    
     ch: ['k', 'ˈk', 'ˈkː', 'ˌk', 'ˌkː', 'kː'],
     ci: ['tʃ', 'ˈtʃ', 'tʃː', 'ˈtʃː'],
