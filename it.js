@@ -256,14 +256,7 @@ export function applyG2PMapping(text, ipa) {
 
 
   
-   //       if (lowerText[i] === "'" && lowerText[i + 1] === 'u') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
-  //    if (ipa[ipaIndex] === 'w') {
-   //       result.push(`'${text[i+1]}(${ipa[ipaIndex]})`);
-    //      i += 2; // Skip past "ci"
-    //      ipaIndex += 1; // Skip past the "tʃ" in IPA
-    //      continue; // Skip the rest of the processing for this "ci"
-   //   }}
+
 
 
 
@@ -450,24 +443,24 @@ if (
 
 
                if (lowerText[i] === 'z' && lowerText[i + 1] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+     
       if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'd' && ipa[ipaIndex + 2] === 'z' && ipa[ipaIndex + 3] === 'ː') {
           result.push(`${text[i]}${text[i + 1]}(ˈdzː)`);
-          i += 2; // Skip past "ci"
-          ipaIndex += 4; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
+          i += 2; 
+          ipaIndex += 4; 
+          continue; 
         }
       }
 
 
 
                    if (lowerText[i] === 'z' && lowerText[i + 1] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+     
       if (ipa[ipaIndex] === 'd' && ipa[ipaIndex + 1] === 'z' && ipa[ipaIndex + 2] === 'ː') {
           result.push(`${text[i]}${text[i + 1]}(dzː)`);
-          i += 2; // Skip past "ci"
-          ipaIndex += 3; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
+          i += 2; 
+          ipaIndex += 3; 
+          continue; 
         }
       }
     
@@ -475,23 +468,23 @@ if (
     // z dz
     
                   if (lowerText[i] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+   
       if (ipa[ipaIndex] === 'd' && ipa[ipaIndex + 1] === 'z' && ipa[ipaIndex + 2] === 'ː') {
           result.push(`${text[i]}(dzː)`);
-          i += 1; // Skip past "ci"
-          ipaIndex += 3; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
+          i += 1; 
+          ipaIndex += 3;
+          continue;
         }
       }
     
     
              if (lowerText[i] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+    
       if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'd' && ipa[ipaIndex + 2] === 'z') {
           result.push(`${text[i]}(ˈdz)`);
-          i += 1; // Skip past "ci"
-          ipaIndex += 3; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
+          i += 1;
+          ipaIndex += 3; 
+          continue;
         }
       }
 
@@ -499,16 +492,16 @@ if (
 
 
             if (lowerText[i] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
-      if (ipa[ipaIndex] === 'd' && ipa[ipaIndex + 1] === 'z') {
-        const nextIpa = ipa.slice(ipaIndex + 2, ipaIndex + 4); // Check the next two IPA chars
 
-        if (!/ː/.test(nextIpa)) { // If "tʃ" is not followed by those sounds
-          // map "ci" with "tʃ" to "ci(tʃ)"
+      if (ipa[ipaIndex] === 'd' && ipa[ipaIndex + 1] === 'z') {
+        const nextIpa = ipa.slice(ipaIndex + 2, ipaIndex + 4); 
+
+        if (!/ː/.test(nextIpa)) { 
+          
           result.push(`${letter}(dz)`);
-          i += 1; // Skip past "ci"
-          ipaIndex += 2; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
+          i += 1;
+          ipaIndex += 2;
+          continue;
         }
       }
     }
@@ -521,24 +514,24 @@ if (
  // zz ts
     
                if (lowerText[i] === 'z' && lowerText[i + 1] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+
       if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 't' && ipa[ipaIndex + 2] === 's' && ipa[ipaIndex + 3] === 'ː') {
           result.push(`${text[i]}${text[i + 1]}(ˈtsː)`);
-          i += 2; // Skip past "ci"
-          ipaIndex += 4; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
+          i += 2; 
+          ipaIndex += 4; 
+          continue;
         }
       }
 
 
     
                if (lowerText[i] === 'z' && lowerText[i + 1] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+  
       if (ipa[ipaIndex] === 't' && ipa[ipaIndex + 1] === 's' && ipa[ipaIndex + 2] === 'ː') {
           result.push(`${text[i]}${text[i + 1]}(tsː)`);
-          i += 2; // Skip past "ci"
-          ipaIndex += 3; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
+          i += 2; 
+          ipaIndex += 3;
+          continue;
         }
       }
 
@@ -547,27 +540,27 @@ if (
 
 
         if (lowerText[i] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+      
       if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 't' && ipa[ipaIndex + 2] === 's' && ipa[ipaIndex + 3] === 'ː') {
           result.push(`${text[i]}(ˈtsː)`);
-          i += 1; // Skip past "ci"
-          ipaIndex += 4; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
+          i += 1;
+          ipaIndex += 4;
+          continue;
         }
       }
 
 
     
         if (lowerText[i] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+      
       if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 't' && ipa[ipaIndex + 2] === 's') {
         const nextIpa = ipa.slice(ipaIndex + 3, ipaIndex + 5); // Check the next two IPA chars
 
     
           result.push(`${letter}(ˈts)`);
-          i += 1; // Skip past "ci"
-          ipaIndex += 3; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
+          i += 1; 
+          ipaIndex += 3; 
+          continue;
         }
     }
     
@@ -576,12 +569,12 @@ if (
 
 
                if (lowerText[i] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+     
       if (ipa[ipaIndex] === 't' && ipa[ipaIndex + 1] === 's' && ipa[ipaIndex + 2] === 'ː') {
           result.push(`${text[i]}(tsː)`);
-          i += 1; // Skip past "ci"
-          ipaIndex += 3; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
+          i += 1;
+          ipaIndex += 3; 
+          continue;
         }
       }
 
@@ -592,16 +585,16 @@ if (
 
     
         if (lowerText[i] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+  
       if (ipa[ipaIndex] === 't' && ipa[ipaIndex + 1] === 's') {
-        const nextIpa = ipa.slice(ipaIndex + 2, ipaIndex + 4); // Check the next two IPA chars
+        const nextIpa = ipa.slice(ipaIndex + 2, ipaIndex + 4); 
 
-        if (!/ː/.test(nextIpa)) { // If "tʃ" is not followed by those sounds
-          // map "ci" with "tʃ" to "ci(tʃ)"
+        if (!/ː/.test(nextIpa)) { 
+   
           result.push(`${letter}(ts)`);
-          i += 1; // Skip past "ci"
-          ipaIndex += 2; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
+          i += 1; 
+          ipaIndex += 2;
+          continue; 
         }
       }
     }
@@ -617,13 +610,13 @@ if (
     // cch k
     
         if (lowerText[i] === 'c' && lowerText[i + 1] === 'c' && lowerText[i + 2] === 'h') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+
       if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'k' && ipa[ipaIndex + 2] === 'ː') {
       
           result.push(`${letter}${text[i + 1]}${text[i + 2]}(ˈkː)`);
-          i += 3; // Skip past "ci"
-          ipaIndex += 3; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
+          i += 3;
+          ipaIndex += 3; 
+          continue; 
         }
 
     }
@@ -633,16 +626,16 @@ if (
 // cci tʃ
     
         if (lowerText[i] === 'c' && lowerText[i + 1] === 'c' && lowerText[i + 2] === 'i') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+      
       if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 't' && ipa[ipaIndex + 2] === 'ʃ' && ipa[ipaIndex + 3] === 'ː') {
-        const nextIpa = ipa.slice(ipaIndex + 4, ipaIndex + 6); // Check the next two IPA chars
+        const nextIpa = ipa.slice(ipaIndex + 4, ipaIndex + 6); 
 
-        if (!/i|ˈi|j|ˈj/.test(nextIpa)) { // If "tʃ" is not followed by those sounds
-          // map "ci" with "tʃ" to "ci(tʃ)"
+        if (!/i|ˈi|j|ˈj/.test(nextIpa)) { 
+       
           result.push(`${letter}${text[i + 1]}${text[i + 2]}(ˈtʃː)`);
-          i += 3; // Skip past "ci"
-          ipaIndex += 4; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
+          i += 3; 
+          ipaIndex += 4; 
+          continue; 
         }
 
          else if (/i|ˈi/.test(nextIpa)) {
@@ -656,45 +649,36 @@ if (
 
 
 
-
-
         // cc k
+    
         if (lowerText[i] === 'c' && lowerText[i + 1] === 'c') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+      
       if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'k' && ipa[ipaIndex + 2] === 'ː') {
       
           result.push(`${letter}${text[i + 1]}(ˈkː)`);
-          i += 2; // Skip past "ci"
-          ipaIndex += 3; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
+          i += 2; 
+          ipaIndex += 3;
+          continue; 
         }
     }
 
     
     // cc tʃ
+    
         if (lowerText[i] === 'c' && lowerText[i + 1] === 'c') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+      
       if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 't' && ipa[ipaIndex + 2] === 'ʃ' && ipa[ipaIndex + 3] === 'ː') {
       
           result.push(`${letter}${text[i + 1]}(ˈtʃː)`);
-          i += 2; // Skip past "ci"
-          ipaIndex += 4; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
+          i += 2; 
+          ipaIndex += 4; 
+          continue; 
         }
 
     }
 
     
 
-
-
-
-
-
-
-
-  
-   
 
 
 
