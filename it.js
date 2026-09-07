@@ -768,7 +768,8 @@ if (
 
 
 
-    // sci(ˈʃː) 2026    
+    // sci ʃ
+    
         if (lowerText[i] === 's' && lowerText[i + 1] === 'c' && lowerText[i + 2] === 'i') {
       // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
       if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'ʃ' && ipa[ipaIndex + 2] === 'ː') {
@@ -795,43 +796,18 @@ if (
       
 
 
-    
-    
-    // sci(ˈʃ) 2026    
-
-    if (
-  lowerText[i] === 's' &&
-  lowerText[i + 1] === 'c' &&
-  lowerText[i + 2] === 'i'
-) {
-
-  // Match either ʎː or ʎʎ
-  if (
-    (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'ʃ' && ipa[ipaIndex + 2] !== 'i')
-  ) {
-
-    result.push(
-      `${text[i]}${text[i + 1]}${text[i + 2]}(ˈʃ)`
-    );
-
-    i += 3;
-    ipaIndex += 2;
-
-    continue;
-  }
-}
 
 
 
 
-      // sc(ˈʃː) 2026    
+
+  // sc ʃ   
 
     if (
   lowerText[i] === 's' &&
   lowerText[i + 1] === 'c'
 ) {
 
-  // Match either ʎː or ʎʎ
   if (
     (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'ʃ' && ipa[ipaIndex + 2] === 'ː'  && ipa[ipaIndex + 2] !== 'i')
   ) {
@@ -850,16 +826,13 @@ if (
 
 
 
-
-
-              // sc(ˈʃ) 2026    
+   
 
     if (
   lowerText[i] === 's' &&
   lowerText[i + 1] === 'c'
 ) {
 
-  // Match either ʎː or ʎʎ
   if (
     (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'ʃ' && ipa[ipaIndex + 2] === 'i')
   ) {
@@ -880,15 +853,11 @@ if (
     
 
     
-
-        // sc(ʃː) 2026    
-
     if (
   lowerText[i] === 's' &&
   lowerText[i + 1] === 'c'
 ) {
 
-  // Match either ʎː or ʎʎ
   if (
     (ipa[ipaIndex] === 'ʃ' && ipa[ipaIndex + 1] === 'ː')
   ) {
@@ -905,15 +874,13 @@ if (
 }
 
 
-
-           // sc(ˈʃ) 2026    
+6    
 
     if (
   lowerText[i] === 's' &&
   lowerText[i + 1] === 'c'
 ) {
 
-  // Match either ʎː or ʎʎ
   if (
     (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'ʃ')
   ) {
