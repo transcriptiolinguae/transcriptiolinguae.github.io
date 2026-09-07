@@ -721,7 +721,7 @@ if (
       
           result.push(`${letter}${text[i + 1]}(kː)`);
           i += 2; 
-          ipaIndex += 3;
+          ipaIndex += 2;
           continue; 
         }
     }
