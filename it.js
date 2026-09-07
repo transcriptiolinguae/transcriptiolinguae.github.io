@@ -796,6 +796,27 @@ if (
       
 
 
+    if (
+  lowerText[i] === 's' &&
+  lowerText[i + 1] === 'c' &&
+  lowerText[i + 2] === 'i'
+) {
+
+  // Match either ʎː or ʎʎ
+  if (
+    (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'ʃ' && ipa[ipaIndex + 2] !== 'i')
+  ) {
+
+    result.push(
+      `${text[i]}${text[i + 1]}${text[i + 2]}(ˈʃ)`
+    );
+
+    i += 3;
+    ipaIndex += 2;
+
+    continue;
+  }
+}
 
 
 
