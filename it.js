@@ -1618,13 +1618,7 @@ if (
 
 
     
-    if (ipaChar === 't' && lowerText[i + 1] === 's') {
-        result.push(`z(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 1;  
-        ipaIndex += 2;  
-        continue;
     
-    }
 
 
 
