@@ -446,7 +446,7 @@ if (
 
 
 
-            // ZZ dz
+            // zz dz
 
 
                if (lowerText[i] === 'z' && lowerText[i + 1] === 'z') {
@@ -472,7 +472,7 @@ if (
       }
     
 
-    // Z dz
+    // z dz
     
                   if (lowerText[i] === 'z') {
       // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
@@ -518,7 +518,7 @@ if (
     
 
 
- // ZZ ts
+ // zz ts
     
                if (lowerText[i] === 'z' && lowerText[i + 1] === 'z') {
       // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
@@ -543,7 +543,7 @@ if (
       }
 
 
- // Z ts
+ // z ts
 
 
         if (lowerText[i] === 'z') {
@@ -614,7 +614,8 @@ if (
 
     
 
-    // cch(kː) 2026
+    // cch k
+    
         if (lowerText[i] === 'c' && lowerText[i + 1] === 'c' && lowerText[i + 2] === 'h') {
       // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
       if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'k' && ipa[ipaIndex + 2] === 'ː') {
@@ -628,20 +629,9 @@ if (
     }
 
 
-    // cc(ˈkː) 2026
-        if (lowerText[i] === 'c' && lowerText[i + 1] === 'c') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
-      if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'k' && ipa[ipaIndex + 2] === 'ː') {
-      
-          result.push(`${letter}${text[i + 1]}(ˈkː)`);
-          i += 2; // Skip past "ci"
-          ipaIndex += 3; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
-        }
 
-    }
-
-// cci(ˈtʃː) 2026      /ɔ|ˈɔ|o|ˈo|a|ˈa|e|ˈe|ɛ|ˈɛ/.test
+// cci tʃ
+    
         if (lowerText[i] === 'c' && lowerText[i + 1] === 'c' && lowerText[i + 2] === 'i') {
       // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
       if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 't' && ipa[ipaIndex + 2] === 'ʃ' && ipa[ipaIndex + 3] === 'ː') {
@@ -664,8 +654,24 @@ if (
     }
  }
 
+
+
+
+
+        // cc k
+        if (lowerText[i] === 'c' && lowerText[i + 1] === 'c') {
+      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+      if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'k' && ipa[ipaIndex + 2] === 'ː') {
+      
+          result.push(`${letter}${text[i + 1]}(ˈkː)`);
+          i += 2; // Skip past "ci"
+          ipaIndex += 3; // Skip past the "tʃ" in IPA
+          continue; // Skip the rest of the processing for this "ci"
+        }
+    }
+
     
-    // cc(ˈtʃː) 2026
+    // cc tʃ
         if (lowerText[i] === 'c' && lowerText[i + 1] === 'c') {
       // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
       if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 't' && ipa[ipaIndex + 2] === 'ʃ' && ipa[ipaIndex + 3] === 'ː') {
@@ -680,6 +686,90 @@ if (
 
     
 
+
+
+
+
+
+
+
+  
+   
+
+
+
+if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'ˈ' && ipa[ipaIndex + 3] === 'i') {
+        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
+        i += 3;  
+        ipaIndex += 2;  
+        continue;
+
+    } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'i') {
+        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
+        i += 3;  
+        ipaIndex += 2;  
+        continue;
+
+
+
+ } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'ˈ' && ipa[ipaIndex + 3] === 'j') {
+        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
+        i += 3;  
+        ipaIndex += 2;  
+        continue;
+
+    } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'j') {
+        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
+        i += 3;  
+        ipaIndex += 2;  
+        continue;
+
+
+
+                 } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'ˈ' && ipa[ipaIndex + 3] === 'e') {
+        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
+        i += 3;  
+        ipaIndex += 2;  
+        continue;
+
+    } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'e') {
+        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
+        i += 3;  
+        ipaIndex += 2;  
+        continue;
+
+
+                 } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'ˈ' && ipa[ipaIndex + 3] === 'ɛ') {
+        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
+        i += 3;  
+        ipaIndex += 2;  
+        continue;
+  
+
+    } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'ɛ') {
+        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
+        i += 3;  
+        ipaIndex += 2;  
+        continue;
+          }     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
@@ -891,65 +981,7 @@ if (
 
 
 
-    
-   
-
-
-
-if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'ˈ' && ipa[ipaIndex + 3] === 'i') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
-
-    } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'i') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
-
-
-
- } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'ˈ' && ipa[ipaIndex + 3] === 'j') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
-
-    } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'j') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
-
-
-
-                 } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'ˈ' && ipa[ipaIndex + 3] === 'e') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
-
-    } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'e') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
-
-
-                 } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'ˈ' && ipa[ipaIndex + 3] === 'ɛ') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
   
-
-    } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'ɛ') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
-          }     
 
 
 // gn(ɲ)
