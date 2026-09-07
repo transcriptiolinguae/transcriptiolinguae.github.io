@@ -46,7 +46,7 @@ export function validateOrReturnOriginal(originalWord, mappedString) {
     q: ['p', 'ˈp', 'pː', 'ˈpː'],
     rr: ['rː', 'ˈrː'],
     r: ['r', 'ˈr', 'rː', 'ˈrː'],
-    sci: ['ʃ', 'ˈʃ', 'ˈʃː'],
+    sci: ['ʃ', 'ˈʃ', 'ʃː', 'ˈʃː'],
     sc: ['ʃ', 'ˈʃ', 'ʃː', 'ˈʃː'],
     ss: ['sː', 'ˈsː'],
     s: ['s', 'ˈs', 'sː', 'ˈsː', 'z', 'ˈz', 'zː', 'ˈzː', 'ˌz'],
@@ -56,7 +56,7 @@ export function validateOrReturnOriginal(originalWord, mappedString) {
     ù: ['u', 'ˈu', 'uː', 'ˈuː'],
     vv: ['vː', 'ˈvː'],
     v: ['v', 'ˈv', 'vː', 'ˈvː'],
-    zz: ['tsː', 'dzː', 'ˈtsː', 'ˈdzː'],
+    zz: ['dzː', 'ˈdzː', 'tsː', 'ˈtsː'],
     z: ['dz', 'ˈdz', 'dzː', 'ˈdzː', 'ts', 'ˈts', 'tsː', 'ˈtsː']
   };
 
