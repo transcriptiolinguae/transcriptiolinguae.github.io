@@ -623,6 +623,20 @@ if (
 
 
 
+            if (lowerText[i] === 'c' && lowerText[i + 1] === 'c' && lowerText[i + 2] === 'h') {
+
+      if (ipa[ipaIndex] === 'k' && ipa[ipaIndex + 1] === 'ː') {
+      
+          result.push(`${letter}${text[i + 1]}${text[i + 2]}(kː)`);
+          i += 3;
+          ipaIndex += 2; 
+          continue; 
+        }
+
+    }
+
+
+
 // cci tʃ
     
         if (lowerText[i] === 'c' && lowerText[i + 1] === 'c' && lowerText[i + 2] === 'i') {
@@ -679,63 +693,6 @@ if (
 
     
 
-
-
-
-if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'ˈ' && ipa[ipaIndex + 3] === 'i') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
-
-    } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'i') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
-
-
-
- } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'ˈ' && ipa[ipaIndex + 3] === 'j') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
-
-    } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'j') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
-
-
-
-                 } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'ˈ' && ipa[ipaIndex + 3] === 'e') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
-
-    } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'e') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
-
-
-                 } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'ˈ' && ipa[ipaIndex + 3] === 'ɛ') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
-  
-
-    } else if (ipaChar === 'k' && ipa[ipaIndex + 1] === 'ː' && ipa[ipaIndex + 2] === 'ɛ') {
-        result.push(`cch(${ipaChar}${ipa[ipaIndex + 1]})`);  
-        i += 3;  
-        ipaIndex += 2;  
-        continue;
-          }     
 
 
 
