@@ -660,12 +660,7 @@ if (
     }
 
 
-
-
-
         // cc tʃ
-
-
 
       if (lowerText[i] === 'c' && lowerText[i + 1] === 'c') {
       
@@ -683,7 +678,7 @@ if (
     
     
             if (lowerText[i] === 'c' && lowerText[i + 1] === 'c') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+      
       if (ipa[ipaIndex] === 't' && ipa[ipaIndex + 1] === 'ʃ' && ipa[ipaIndex + 2] === 'ː') {
         const nextIpa = ipa.slice(ipaIndex + 3, ipaIndex + 5); // Check the next two IPA chars
 
