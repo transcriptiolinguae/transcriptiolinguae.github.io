@@ -446,11 +446,8 @@ if (
 
 
 
-            // z(dz)
+            // ZZ dz
 
-  
-
-    
 
                if (lowerText[i] === 'z' && lowerText[i + 1] === 'z') {
       // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
@@ -473,8 +470,10 @@ if (
           continue; // Skip the rest of the processing for this "ci"
         }
       }
+    
 
-
+    // Z dz
+    
                   if (lowerText[i] === 'z') {
       // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
       if (ipa[ipaIndex] === 'd' && ipa[ipaIndex + 1] === 'z' && ipa[ipaIndex + 2] === 'ː') {
@@ -519,7 +518,7 @@ if (
     
 
 
- // z(ts)
+ // ZZ ts
     
                if (lowerText[i] === 'z' && lowerText[i + 1] === 'z') {
       // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
@@ -544,7 +543,7 @@ if (
       }
 
 
-
+ // Z ts
 
 
         if (lowerText[i] === 'z') {
@@ -558,23 +557,6 @@ if (
       }
 
 
-
-    
-
-
-               if (lowerText[i] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
-      if (ipa[ipaIndex] === 't' && ipa[ipaIndex + 1] === 's' && ipa[ipaIndex + 2] === 'ː') {
-          result.push(`${text[i]}(tsː)`);
-          i += 1; // Skip past "ci"
-          ipaIndex += 3; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
-        }
-      }
-
-
-
-    // z(ˈts)
     
         if (lowerText[i] === 'z') {
       // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
@@ -590,8 +572,21 @@ if (
     }
     
 
-
     
+
+
+               if (lowerText[i] === 'z') {
+      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+      if (ipa[ipaIndex] === 't' && ipa[ipaIndex + 1] === 's' && ipa[ipaIndex + 2] === 'ː') {
+          result.push(`${text[i]}(tsː)`);
+          i += 1; // Skip past "ci"
+          ipaIndex += 3; // Skip past the "tʃ" in IPA
+          continue; // Skip the rest of the processing for this "ci"
+        }
+      }
+
+
+   
 
 
 
