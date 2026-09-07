@@ -436,20 +436,90 @@ if (
 }
 
 
+// RESYLLIBIFICATION
 
 
 
 
 
 
+
+
+
+            // z(dz)
+
+  
+
+    
+
+               if (lowerText[i] === 'z' && lowerText[i + 1] === 'z') {
+      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+      if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'd' && ipa[ipaIndex + 2] === 'z' && ipa[ipaIndex + 3] === 'ː') {
+          result.push(`${text[i]}${text[i + 1]}(ˈdzː)`);
+          i += 2; // Skip past "ci"
+          ipaIndex += 4; // Skip past the "tʃ" in IPA
+          continue; // Skip the rest of the processing for this "ci"
+        }
+      }
+
+
+
+                   if (lowerText[i] === 'z' && lowerText[i + 1] === 'z') {
+      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+      if (ipa[ipaIndex] === 'd' && ipa[ipaIndex + 1] === 'z' && ipa[ipaIndex + 2] === 'ː') {
+          result.push(`${text[i]}${text[i + 1]}(dzː)`);
+          i += 2; // Skip past "ci"
+          ipaIndex += 3; // Skip past the "tʃ" in IPA
+          continue; // Skip the rest of the processing for this "ci"
+        }
+      }
+
+
+                  if (lowerText[i] === 'z') {
+      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+      if (ipa[ipaIndex] === 'd' && ipa[ipaIndex + 1] === 'z' && ipa[ipaIndex + 2] === 'ː') {
+          result.push(`${text[i]}(dzː)`);
+          i += 1; // Skip past "ci"
+          ipaIndex += 3; // Skip past the "tʃ" in IPA
+          continue; // Skip the rest of the processing for this "ci"
+        }
+      }
+    
+    
+             if (lowerText[i] === 'z') {
+      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+      if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'd' && ipa[ipaIndex + 2] === 'z') {
+          result.push(`${text[i]}(ˈdz)`);
+          i += 1; // Skip past "ci"
+          ipaIndex += 3; // Skip past the "tʃ" in IPA
+          continue; // Skip the rest of the processing for this "ci"
+        }
+      }
+
+  
+
+
+            if (lowerText[i] === 'z') {
+      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
+      if (ipa[ipaIndex] === 'd' && ipa[ipaIndex + 1] === 'z') {
+        const nextIpa = ipa.slice(ipaIndex + 2, ipaIndex + 4); // Check the next two IPA chars
+
+        if (!/ː/.test(nextIpa)) { // If "tʃ" is not followed by those sounds
+          // map "ci" with "tʃ" to "ci(tʃ)"
+          result.push(`${letter}(dz)`);
+          i += 1; // Skip past "ci"
+          ipaIndex += 2; // Skip past the "tʃ" in IPA
+          continue; // Skip the rest of the processing for this "ci"
+        }
+      }
+    }
 
 
 
     
 
 
-
- // ts 2026
+ // z(ts)
     
                if (lowerText[i] === 'z' && lowerText[i + 1] === 'z') {
       // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
@@ -473,36 +543,8 @@ if (
         }
       }
 
-                   if (lowerText[i] === 'z' && lowerText[i + 1] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
-      if (ipa[ipaIndex] === 'd' && ipa[ipaIndex + 1] === 'z' && ipa[ipaIndex + 2] === 'ː') {
-          result.push(`${text[i]}${text[i + 1]}(dzː)`);
-          i += 2; // Skip past "ci"
-          ipaIndex += 3; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
-        }
-      }
 
 
-
-  
-
-            // dz 2026
-
-
-  
-
-    
-
-               if (lowerText[i] === 'z' && lowerText[i + 1] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
-      if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'd' && ipa[ipaIndex + 2] === 'z' && ipa[ipaIndex + 3] === 'ː') {
-          result.push(`${text[i]}${text[i + 1]}(ˈdzː)`);
-          i += 2; // Skip past "ci"
-          ipaIndex += 4; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
-        }
-      }
 
 
         if (lowerText[i] === 'z') {
@@ -519,8 +561,6 @@ if (
 
     
 
-          // ts 2026
-
 
                if (lowerText[i] === 'z') {
       // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
@@ -532,26 +572,6 @@ if (
         }
       }
 
-                  if (lowerText[i] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
-      if (ipa[ipaIndex] === 'd' && ipa[ipaIndex + 1] === 'z' && ipa[ipaIndex + 2] === 'ː') {
-          result.push(`${text[i]}(dzː)`);
-          i += 1; // Skip past "ci"
-          ipaIndex += 3; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
-        }
-      }
-    
-    
-             if (lowerText[i] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
-      if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'd' && ipa[ipaIndex + 2] === 'z') {
-          result.push(`${text[i]}(ˈdz)`);
-          i += 1; // Skip past "ci"
-          ipaIndex += 3; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
-        }
-      }
 
 
     // z(ˈts)
@@ -574,7 +594,7 @@ if (
     
 
 
-    // z(ts)
+
     
         if (lowerText[i] === 'z') {
       // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
@@ -592,22 +612,7 @@ if (
     }
 
 
-    // z(dz)
-    
-        if (lowerText[i] === 'z') {
-      // Check if the IPA contains "tʃ" and if it is followed by "i", "ˈi", "j", or "ˈj"
-      if (ipa[ipaIndex] === 'd' && ipa[ipaIndex + 1] === 'z') {
-        const nextIpa = ipa.slice(ipaIndex + 2, ipaIndex + 4); // Check the next two IPA chars
 
-        if (!/ː/.test(nextIpa)) { // If "tʃ" is not followed by those sounds
-          // map "ci" with "tʃ" to "ci(tʃ)"
-          result.push(`${letter}(dz)`);
-          i += 1; // Skip past "ci"
-          ipaIndex += 2; // Skip past the "tʃ" in IPA
-          continue; // Skip the rest of the processing for this "ci"
-        }
-      }
-    }
 
 
 
