@@ -52,10 +52,10 @@ export function validateOrReturnOriginal(originalWord, mappedString) {
     s: ['s', 'ˈs', 'sː', 'ˈsː', 'z', 'ˈz', 'zː', 'ˈzː', 'ˌz'],
     tt: ['tː', 'ˈtː'],
     t: ['t', 'ˈt', 'tː', 'ˈtː'],
-    u: ['u', 'ˈu', 'w', 'ˈw'],
-    ù: ['u', 'ˈu'],
+    u: ['u', 'ˈu', 'uː', 'ˈuː', 'w', 'ˈw', 'wː', 'ˈwː'],
+    ù: ['u', 'ˈu', 'uː', 'ˈuː'],
     vv: ['vː', 'ˈvː'],
-    v: ['v', 'ˈv'],
+    v: ['v', 'ˈv', 'vː', 'ˈvː'],
     zz: ['tsː', 'dzː', 'ˈtsː', 'ˈdzː'],
     z: ['ts', 'dz', 'ˈts', 'ˈdz', 'ˈtsː', 'tsː', 'dzː']
   };
