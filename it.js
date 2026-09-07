@@ -627,27 +627,7 @@ if (
  }
 
 
-           if (lowerText[i] === 'c' && lowerText[i + 1] === 'c' && lowerText[i + 2] === 'i') {
-      
-      if (ipa[ipaIndex] === 't' && ipa[ipaIndex + 1] === 'ʃ' && ipa[ipaIndex + 2] === 'ː') {
-        const nextIpa = ipa.slice(ipaIndex + 3, ipaIndex + 5); 
 
-        if (!/i|ˈi|j|ˈj/.test(nextIpa)) { 
-       
-          result.push(`${letter}${text[i + 1]}${text[i + 2]}(tʃː)`);
-          i += 3; 
-          ipaIndex += 3; 
-          continue; 
-        }
-
-//         else if (/i|ˈi/.test(nextIpa)) {
-//          result.push(`${letter}${text[i + 1]}(ˈtʃː)`);
-//         i += 2; 
-//         ipaIndex += 4; 
-//          continue;   
-//      }
-    }
- }
 
     
 
@@ -709,22 +689,22 @@ if (
     }
 
 
+    //
     
-    
-//            if (lowerText[i] === 'c' && lowerText[i + 1] === 'c') {
+            if (lowerText[i] === 'c' && lowerText[i + 1] === 'c') {
       
-//      if (ipa[ipaIndex] === 't' && ipa[ipaIndex + 1] === 'ʃ' && ipa[ipaIndex + 2] === 'ː') {
-//       const nextIpa = ipa.slice(ipaIndex + 3, ipaIndex + 5); 
+      if (ipa[ipaIndex] === 't' && ipa[ipaIndex + 1] === 'ʃ' && ipa[ipaIndex + 2] === 'ː') {
+       const nextIpa = ipa.slice(ipaIndex + 3, ipaIndex + 5); 
 
-//        if (/e|ˈe|ɛ|ˈɛ|i|ˈi|j|ˈj/.test(nextIpa)) {
+        if (/e|ˈe|ɛ|ˈɛ|i|ˈi|j|ˈj/.test(nextIpa)) {
 
-//          result.push(`${letter}${text[i + 1]}(tʃː)`);
-//          i += 2; 
-//          ipaIndex += 3; 
-//          continue;
-//        }
-//      }
-//    }
+          result.push(`${letter}${text[i + 1]}(tʃː)`);
+          i += 2; 
+          ipaIndex += 3; 
+          continue;
+        }
+      }
+    }
     
 
 
