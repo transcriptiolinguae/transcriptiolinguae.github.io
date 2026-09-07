@@ -57,7 +57,7 @@ export function validateOrReturnOriginal(originalWord, mappedString) {
     vv: ['vː', 'ˈvː'],
     v: ['v', 'ˈv', 'vː', 'ˈvː'],
     zz: ['tsː', 'dzː', 'ˈtsː', 'ˈdzː'],
-    z: ['ts', 'dz', 'ˈts', 'ˈdz', 'ˈtsː', 'tsː', 'dzː']
+    z: ['dz', 'ˈdz', 'dzː', 'ˈdzː', 'ts', 'ˈts', 'tsː', 'ˈtsː']
   };
 
   const regex = /([\p{L}]+)\(([^()]*)\)/gu;  //  This creates a regular expression. Its job is to find every letters(IPA) pair inside v(v)o(o)l(l)o(o)n(n)t(t)à(ˈa) Let's dissect it. ( Starts capture group 1. [\p{L}] Means any Unicode letter. Not only A-Z but also à é ñ ö č + Means one or more. So g works. gli also works. gn also works. First capture group ([\p{L}]+) captures g gli gn bb sci Everything before the parentheses. \( Matches ( literally. Second capture group ([^()]*) means Match everything except ( ) zero or more times. That becomes the IPA. Example g(ʎ) captures ʎ Example à(ˈa) captures ˈa \) Matches ) Flags g Global. Continue finding every match. u Unicode mode. Necessary because of accented letters.
