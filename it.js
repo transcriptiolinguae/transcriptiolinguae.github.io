@@ -747,7 +747,7 @@ if (
           continue;
         }
     }
- }
+ 
 
 
  
@@ -762,7 +762,7 @@ if (
           continue;
         }
     }
- }
+ 
 
         if (lowerText[i] === 'c' && lowerText[i + 1] === 'h') {
           
@@ -774,7 +774,7 @@ if (
           continue;
         }
     }
- }
+ 
 
         if (lowerText[i] === 'c' && lowerText[i + 1] === 'h') {
       
@@ -786,7 +786,7 @@ if (
           continue; 
         }
       }
-    }
+    
 
 
 
