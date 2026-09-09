@@ -761,6 +761,28 @@ if (
     }
 
 
+// qq k
+
+        if (lowerText[i] === 'q' && lowerText[i + 1] === 'q') { 
+    if (ipa[ipaIndex] === 'k' && ipa[ipaIndex + 1] === 'ː') {
+        result.push(`${text[i]}${text[i + 1]}(kː)`); 
+        i += 2; 
+        ipaIndex += 2; 
+        continue; 
+      }
+    }
+
+    
+    if (lowerText[i] === 'q' && lowerText[i + 1] === 'q') { 
+    if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'k' && ipa[ipaIndex + 2] === 'ː') {
+        result.push(`${text[i]}${text[i + 1]}(ˈkː)`); 
+        i += 2; 
+        ipaIndex += 3; 
+        continue; 
+      }
+    }
+
+
     
   // ci tʃ
     
