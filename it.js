@@ -94,15 +94,9 @@ export function applyG2PMapping(text, ipa) {
 
    ipa = ipa
     .replace(/rɾ/g, 'rː')
-  // .replace(/mm/g, 'mː')
-  // .replace(/ff/g, 'fː')
-  // .replace(/vv/g, 'vː')
-  // .replace(/ll/g, 'lː')
     .replace(/kk/g, 'kː')
-  // .replace(/nn/g, 'nː')
     .replace(/ɲɲ/g, 'ɲː')
     .replace(/oo/g, 'oː')
-  // .replace(/ss/g, 'sː')
     .replace(/tt/g, 't')
     .replace(/dd/g, 'd')
     .replace(/ɾ/g, 'r')
@@ -147,7 +141,17 @@ export function applyG2PMapping(text, ipa) {
 
 
     
+ // Check for predefined G2P mapping (e.g., bb -> bː, cc -> kː, etc.)
+    const mappedIpa = g2pMappings[lowerText.slice(i, i + 2)];
+    if (mappedIpa) {
+      result.push(`${text.slice(i, i + 2)}(${mappedIpa})`);
+      i += 2;  // Skip the next letter, since we just processed 2 chars
+      ipaIndex += mappedIpa.length;  // Move IPA index forward by the length of mapped IPA
+      continue;
+    }
+    
 
+    
 
     
    // i(ˈiː) 
@@ -1905,15 +1909,6 @@ if (
 
 
 
- // Check for predefined G2P mapping (e.g., bb -> bː, cc -> kː, etc.)
-    const mappedIpa = g2pMappings[lowerText.slice(i, i + 2)];
-    if (mappedIpa) {
-      result.push(`${text.slice(i, i + 2)}(${mappedIpa})`);
-      i += 2;  // Skip the next letter, since we just processed 2 chars
-      ipaIndex += mappedIpa.length;  // Move IPA index forward by the length of mapped IPA
-      continue;
-    }
-    
 
     
         // Default behavior: Process the IPA character normally
