@@ -770,7 +770,7 @@ if (
 
 // qq k
 
-
+/*
 
         if (lowerText[i] === 'q' && lowerText[i + 1] === 'q') { 
     if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'k' && ipa[ipaIndex + 2] === 'ː') {
@@ -791,7 +791,7 @@ if (
       }
     }
 
-    
+  */ 
 
 
 
