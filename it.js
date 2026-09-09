@@ -111,23 +111,7 @@ export function applyG2PMapping(text, ipa) {
   const lowerText = text.toLowerCase();
 
 
-  /*
-  // Predefined mappings for G2P
-  const g2pMappings = {
-    "bb": "bː",
-    "dd": "dː",
-    "ff": "fː",
-    "ll": "lː", 
-    "mm": "mː",
-    "nn": "nː",   
-    "pp": "pː",
-    "rr": "rː",
-    "ss": "sː",
-    "tt": "tː",
-    "vv": "vː", 
-  };
 
-*/
   
 
   // Process the word-by-word logic
@@ -144,22 +128,13 @@ export function applyG2PMapping(text, ipa) {
 
 
     
-    /*
- // Check for predefined G2P mapping (e.g., bb -> bː, cc -> kː, etc.)
-    const mappedIpa = g2pMappings[lowerText.slice(i, i + 2)];
-    if (mappedIpa) {
-      result.push(`${text.slice(i, i + 2)}(${mappedIpa})`);
-      i += 2;  // Skip the next letter, since we just processed 2 chars
-      ipaIndex += mappedIpa.length;  // Move IPA index forward by the length of mapped IPA
-      continue;
-    }
-    
- */
+
 
 
     
     
     // gemiantes 2026
+    
 const geminates = new Set([
   'b', 'd', 'f', 'l', 'm',
   'n', 'p', 'r', 's', 't', 'v'
@@ -1991,19 +1966,6 @@ if (ipaChar === 'ˈ' || ipaChar === 'ˌ') {
 }
 
 
-
-
-/*   
-        // Default behavior: Process the IPA character normally
-    if (ipaChar === 'ˈ' || ipaChar === 'ˌ') {
-      ipaIndex++;
-      ipaChar = ipa[ipaIndex];
-      result.push(`${text[i]}(ˈ${ipaChar})`);
-    } else {
-      result.push(`${text[i]}(${ipaChar})`);
-    }
-
-   */ 
        
     ipaIndex++;
     i++;
