@@ -558,8 +558,6 @@ if (
         if (lowerText[i] === 'z') {
       
       if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 't' && ipa[ipaIndex + 2] === 's') {
-        const nextIpa = ipa.slice(ipaIndex + 3, ipaIndex + 5); // Check the next two IPA chars
-
     
           result.push(`${letter}(ˈts)`);
           i += 1; 
