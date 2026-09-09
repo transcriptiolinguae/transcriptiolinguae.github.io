@@ -1816,8 +1816,8 @@ if (
 if (ipa[ipaIndex] === 'ˈ' || ipa[ipaIndex] === 'ˌ') {
   const stress = ipa[ipaIndex];
   ipaIndex++;
-  ipa[ipaIndex] = ipa[ipaIndex];
-  result.push(`${text[i]}(${stress}${ipa[ipaIndex]})`);
+  const nextIpa = ipa[ipaIndex];
+  result.push(`${text[i]}(${stress}${nextIpa})`);
 } else {
   result.push(`${text[i]}(${ipa[ipaIndex]})`);
 }
