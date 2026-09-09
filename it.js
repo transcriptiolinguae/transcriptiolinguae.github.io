@@ -1992,14 +1992,6 @@ if (ipaChar === 'ˈ' || ipaChar === 'ˌ') {
 
 
 
-if (ipaChar === 'ˈ' || ipaChar === 'ˌ') {
-  const stress = ipaChar;
-  ipaIndex++;
-  ipaChar = ipa[ipaIndex];
-  result.push(`${text[i]}(${stress}${ipaChar})`);
-} else {
-  result.push(`${text[i]}(${ipaChar})`);
-}
 
 /*   
         // Default behavior: Process the IPA character normally
