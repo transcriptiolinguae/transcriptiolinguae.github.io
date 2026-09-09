@@ -118,7 +118,7 @@ export function applyG2PMapping(text, ipa) {
     "mm": "mː",
     "nn": "nː",   
     "pp": "pː",
-    "qq": "qq",  
+    "qq": "kː",  
     "rr": "rː",
     "ss": "sː",
     "tt": "tː",
