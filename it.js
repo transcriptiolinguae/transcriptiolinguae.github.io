@@ -110,6 +110,8 @@ export function applyG2PMapping(text, ipa) {
   let i = 0;
   const lowerText = text.toLowerCase();
 
+
+  /*
   // Predefined mappings for G2P
   const g2pMappings = {
     "bb": "bː",
@@ -125,7 +127,7 @@ export function applyG2PMapping(text, ipa) {
     "vv": "vː", 
   };
 
-
+*/
   
 
   // Process the word-by-word logic
@@ -142,7 +144,7 @@ export function applyG2PMapping(text, ipa) {
 
 
     
-    
+    /*
  // Check for predefined G2P mapping (e.g., bb -> bː, cc -> kː, etc.)
     const mappedIpa = g2pMappings[lowerText.slice(i, i + 2)];
     if (mappedIpa) {
@@ -152,7 +154,7 @@ export function applyG2PMapping(text, ipa) {
       continue;
     }
     
-
+ */
 
 
     
@@ -184,7 +186,25 @@ if (
   }
 }
 
+if (
+  lowerText[i] === lowerText[i + 1] &&
+  geminates.has(lowerText[i])
+) {
 
+  if (
+    ipa[ipaIndex] === lowerText[i] &&
+    ipa[ipaIndex + 1] === 'ː'
+  ) {
+
+    result.push(
+      `${text[i]}${text[i + 1]}(${lowerText[i]}ː)`
+    );
+
+    i += 2;
+    ipaIndex += 2;
+    continue;
+  }
+}
 
 
 
