@@ -117,7 +117,7 @@ export function applyG2PMapping(text, ipa) {
   // Process the word-by-word logic
   while (i < text.length && ipaIndex < ipa.length) {
     
-    let ipaChar = ipa[ipaIndex];
+
   
     // ★ FIX: keep apostrophes exactly as in original text
     if (text[i] === "'") {
@@ -1813,13 +1813,13 @@ if (
 
 
 
-if (ipaChar === 'ˈ' || ipaChar === 'ˌ') {
-  const stress = ipaChar;
+if (ipa[ipaIndex] === 'ˈ' || ipa[ipaIndex] === 'ˌ') {
+  const stress = ipa[ipaIndex];
   ipaIndex++;
-  ipaChar = ipa[ipaIndex];
-  result.push(`${text[i]}(${stress}${ipaChar})`);
+  ipa[ipaIndex] = ipa[ipaIndex];
+  result.push(`${text[i]}(${stress}${ipa[ipaIndex]})`);
 } else {
-  result.push(`${text[i]}(${ipaChar})`);
+  result.push(`${text[i]}(${ipa[ipaIndex]})`);
 }
 
 
