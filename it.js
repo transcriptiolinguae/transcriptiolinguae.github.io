@@ -125,7 +125,8 @@ export function applyG2PMapping(text, ipa) {
     "vv": "vː", 
   };
 
- 
+
+  
 
   // Process the word-by-word logic
   while (i < text.length && ipaIndex < ipa.length) {
@@ -141,6 +142,7 @@ export function applyG2PMapping(text, ipa) {
 
 
     
+    
  // Check for predefined G2P mapping (e.g., bb -> bː, cc -> kː, etc.)
     const mappedIpa = g2pMappings[lowerText.slice(i, i + 2)];
     if (mappedIpa) {
@@ -150,6 +152,41 @@ export function applyG2PMapping(text, ipa) {
       continue;
     }
     
+
+
+
+    
+    
+    // gemiantes 2026
+const geminates = new Set([
+  'b', 'd', 'f', 'l', 'm',
+  'n', 'p', 'r', 's', 't', 'v'
+]);
+
+if (
+  lowerText[i] === lowerText[i + 1] &&
+  geminates.has(lowerText[i])
+) {
+
+  if (
+    ipa[ipaIndex] === 'ˈ' &&
+    ipa[ipaIndex + 1] === lowerText[i] &&
+    ipa[ipaIndex + 2] === 'ː'
+  ) {
+
+    result.push(
+      `${text[i]}${text[i + 1]}(ˈ${lowerText[i]}ː)`
+    );
+
+    i += 2;
+    ipaIndex += 3;
+    continue;
+  }
+}
+
+
+
+
 
     
 
@@ -262,34 +299,6 @@ export function applyG2PMapping(text, ipa) {
 
 
     
-
-    // gemiantes 2026
-const geminates = new Set([
-  'b', 'd', 'f', 'l', 'm',
-  'n', 'p', 'r', 's', 't', 'v'
-]);
-
-if (
-  lowerText[i] === lowerText[i + 1] &&
-  geminates.has(lowerText[i])
-) {
-
-  if (
-    ipa[ipaIndex] === 'ˈ' &&
-    ipa[ipaIndex + 1] === lowerText[i] &&
-    ipa[ipaIndex + 2] === 'ː'
-  ) {
-
-    result.push(
-      `${text[i]}${text[i + 1]}(ˈ${lowerText[i]}ː)`
-    );
-
-    i += 2;
-    ipaIndex += 3;
-    continue;
-  }
-}
-
 
        
 
@@ -1952,11 +1961,27 @@ if (
 
 
 
+if (ipaChar === 'ˈ' || ipaChar === 'ˌ') {
+  const stress = ipaChar;
+  ipaIndex++;
+  ipaChar = ipa[ipaIndex];
+  result.push(`${text[i]}(${stress}${ipaChar})`);
+} else {
+  result.push(`${text[i]}(${ipaChar})`);
+}
 
 
 
+if (ipaChar === 'ˈ' || ipaChar === 'ˌ') {
+  const stress = ipaChar;
+  ipaIndex++;
+  ipaChar = ipa[ipaIndex];
+  result.push(`${text[i]}(${stress}${ipaChar})`);
+} else {
+  result.push(`${text[i]}(${ipaChar})`);
+}
 
-    
+/*   
         // Default behavior: Process the IPA character normally
     if (ipaChar === 'ˈ' || ipaChar === 'ˌ') {
       ipaIndex++;
@@ -1966,11 +1991,11 @@ if (
       result.push(`${text[i]}(${ipaChar})`);
     }
 
-          
+   */ 
+       
     ipaIndex++;
     i++;
   }
-
   
 
   // If anything left in text, append with empty IPA
