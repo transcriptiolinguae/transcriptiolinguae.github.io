@@ -46,6 +46,7 @@ export function validateOrReturnOriginal(originalWord, mappedString) {
     pp: ['ˈpː', 'ˌpː', 'pː'],
     p: ['p', 'ˈp', 'ˌp', 'ˈpː', 'ˌpː', 'pː'],
     q: ['k', 'ˈk', 'ˌk', 'ˈkː', 'ˌkː', 'kː'],
+    qq: ['k', 'ˈk', 'ˌk', 'ˈkː', 'ˌkː', 'kː'],
     rr: ['ˈrː', 'ˌrː', 'rː'],
     r: ['r', 'ˈr', 'ˌr', 'ˈrː', 'ˌrː', 'rː'],
     sci: ['ʃ', 'ˈʃ', 'ˌʃ', 'ˈʃː', 'ˌʃː', 'ʃː'],
