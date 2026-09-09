@@ -1826,16 +1826,7 @@ if (
  
 
 
-        if (lowerText[i] === "'" && lowerText[i + 1] === 'a') {
-   
-      if (ipa[ipaIndex] === 'a') {
-          result.push(`${text[i]}${text[i + 1]}(a)`);
-          i += 2; 
-          ipaIndex += 1; 
-          continue; 
-        }
-      }
-    
+
 
              if (lowerText[i] === "'" && lowerText[i + 1] === 'e') {
 
