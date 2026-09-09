@@ -740,6 +740,21 @@ if (
 
 
      // cq k
+
+
+
+    if (lowerText[i] === 'c' && lowerText[i + 1] === 'q') { 
+    if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'k' && ipa[ipaIndex + 2] === 'ː') {
+        result.push(`${text[i]}${text[i + 1]}(ˈkː)`); 
+        i += 2; 
+        ipaIndex += 3; 
+        continue; 
+      }
+    }
+
+
+
+    
     
     if (lowerText[i] === 'c' && lowerText[i + 1] === 'q') { 
     if (ipa[ipaIndex] === 'k' && ipa[ipaIndex + 1] === 'ː') {
@@ -751,7 +766,14 @@ if (
     }
 
     
-    if (lowerText[i] === 'c' && lowerText[i + 1] === 'q') { 
+
+
+
+// qq k
+
+
+
+        if (lowerText[i] === 'q' && lowerText[i + 1] === 'q') { 
     if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'k' && ipa[ipaIndex + 2] === 'ː') {
         result.push(`${text[i]}${text[i + 1]}(ˈkː)`); 
         i += 2; 
@@ -759,9 +781,7 @@ if (
         continue; 
       }
     }
-
-
-// qq k
+    
 
         if (lowerText[i] === 'q' && lowerText[i + 1] === 'q') { 
     if (ipa[ipaIndex] === 'k' && ipa[ipaIndex + 1] === 'ː') {
@@ -773,14 +793,7 @@ if (
     }
 
     
-    if (lowerText[i] === 'q' && lowerText[i + 1] === 'q') { 
-    if (ipa[ipaIndex] === 'ˈ' && ipa[ipaIndex + 1] === 'k' && ipa[ipaIndex + 2] === 'ː') {
-        result.push(`${text[i]}${text[i + 1]}(ˈkː)`); 
-        i += 2; 
-        ipaIndex += 3; 
-        continue; 
-      }
-    }
+
 
 
     
