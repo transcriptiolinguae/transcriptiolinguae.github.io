@@ -218,64 +218,7 @@ export function applyG2PMapping(text, ipa) {
         }
       }
 
-    
 
-
-
-                 // ' any (ˈɛː)
-    
-       if (lowerText[i] === "'" && /[a-z\u00C0-\u017F]/i.test(lowerText[i + 1])) {
-    
-              const ipaRegex = /[a-z\u0250-\u02AF\u02B0-\u02FF\u0300-\u036F\u1D00-\u1DBF\uA700-\uA71F]/i;
-
-      if (ipa[ipaIndex] === 'ˈ' && ipaRegex.test(ipa[ipaIndex]) && ipa[ipaIndex + 2] === 'ː') {
-          result.push(`${text[i+1]}(ˈ${ipa[ipaIndex + 1]})`);
-          i += 2; 
-          ipaIndex += 3;
-          continue;
-        }}
-    
-          if (lowerText[i] === "'" && /[a-z]/i.test(lowerText[i + 1])) {
-    
-                 const ipaRegex = /[a-z\u0250-\u02AF\u02B0-\u02FF\u0300-\u036F\u1D00-\u1DBF\uA700-\uA71F]/i;
-
-      if (ipa[ipaIndex] === 'ˈ' && ipaRegex.test(ipa[ipaIndex])) {
-          result.push(`${text[i+1]}(ˈ${ipa[ipaIndex + 1]})`);
-          i += 2; 
-          ipaIndex += 2; 
-          continue; 
-      }}
-
-
-             if (lowerText[i] === "'" && /[a-z]/i.test(lowerText[i + 1])) {
-     
-                 const ipaRegex = /[a-z\u0250-\u02AF\u02B0-\u02FF\u0300-\u036F\u1D00-\u1DBF\uA700-\uA71F]/i;
-
-      if (ipa[ipaIndex] === 'ˌ' && ipaRegex.test(ipa[ipaIndex])) {
-          result.push(`${text[i+1]}(ˌ${ipa[ipaIndex + 1]})`);
-          i += 2; 
-          ipaIndex += 2;
-          continue; 
-      }}
-
-
-  
-
-
-
-
-              if (lowerText[i] === "'" && /[a-z\u00C0-\u017F]/i.test(lowerText[i + 1])) {
-      
-      const ipaRegex = /[a-z\u0250-\u02AF\u02B0-\u02FF\u0300-\u036F\u1D00-\u1DBF\uA700-\uA71F]/i;
-
-      if (ipaRegex.test(ipa[ipaIndex])) {
-          result.push(`'${text[i+1]}(${ipa[ipaIndex]})`);
-          i += 2; 
-          ipaIndex += 1; 
-          continue; 
-      }}
-       
-       
 
 
          // o(ˈoː)
@@ -1822,10 +1765,82 @@ if (
 
     
     
+
+
+
+ /* 
+
+         // ' any (ˈɛː)
+    
+       if (lowerText[i] === "'" && /[a-z\u00C0-\u017F]/i.test(lowerText[i + 1])) {
+    
+              const ipaRegex = /[a-z\u0250-\u02AF\u02B0-\u02FF\u0300-\u036F\u1D00-\u1DBF\uA700-\uA71F]/i;
+
+      if (ipa[ipaIndex] === 'ˈ' && ipaRegex.test(ipa[ipaIndex]) && ipa[ipaIndex + 2] === 'ː') {
+          result.push(`${text[i+1]}(ˈ${ipa[ipaIndex + 1]})`);
+          i += 2; 
+          ipaIndex += 3;
+          continue;
+        }}
+    
+          if (lowerText[i] === "'" && /[a-z]/i.test(lowerText[i + 1])) {
+    
+                 const ipaRegex = /[a-z\u0250-\u02AF\u02B0-\u02FF\u0300-\u036F\u1D00-\u1DBF\uA700-\uA71F]/i;
+
+      if (ipa[ipaIndex] === 'ˈ' && ipaRegex.test(ipa[ipaIndex])) {
+          result.push(`${text[i+1]}(ˈ${ipa[ipaIndex + 1]})`);
+          i += 2; 
+          ipaIndex += 2; 
+          continue; 
+      }}
+
+
+             if (lowerText[i] === "'" && /[a-z]/i.test(lowerText[i + 1])) {
+     
+                 const ipaRegex = /[a-z\u0250-\u02AF\u02B0-\u02FF\u0300-\u036F\u1D00-\u1DBF\uA700-\uA71F]/i;
+
+      if (ipa[ipaIndex] === 'ˌ' && ipaRegex.test(ipa[ipaIndex])) {
+          result.push(`${text[i+1]}(ˌ${ipa[ipaIndex + 1]})`);
+          i += 2; 
+          ipaIndex += 2;
+          continue; 
+      }}
+
+
+  
+
+
+
+
+              if (lowerText[i] === "'" && /[a-z\u00C0-\u017F]/i.test(lowerText[i + 1])) {
+      
+      const ipaRegex = /[a-z\u0250-\u02AF\u02B0-\u02FF\u0300-\u036F\u1D00-\u1DBF\uA700-\uA71F]/i;
+
+      if (ipaRegex.test(ipa[ipaIndex])) {
+          result.push(`'${text[i+1]}(${ipa[ipaIndex]})`);
+          i += 2; 
+          ipaIndex += 1; 
+          continue; 
+      }}
+       
+       
+
+
+
+
    // Elisione '
+    
  
 
+       if (lowerText[i] === "'" && lowerText[i + 1] === 'a') {
 
+      if (ipa[ipaIndex] === 'a') {
+          result.push(`${letter}${text[i + 1]}(a)`);
+          i += 2; 
+          ipaIndex += 1; 
+          continue; 
+        }
+      }
 
 
              if (lowerText[i] === "'" && lowerText[i + 1] === 'e') {
@@ -1884,9 +1899,7 @@ if (
         }
       }
 
-
-
-
+ */
 
     
     
