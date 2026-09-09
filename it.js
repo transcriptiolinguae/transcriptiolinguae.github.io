@@ -1183,7 +1183,7 @@ if (
 
             if (lowerText[i] === 'g' && lowerText[i + 1] === 'i') {
      
-      if (ipa[ipaIndex] === 'g' && ipa[ipaIndex + 1] === 'ʒ' && ipa[ipaIndex + 2] === 'ː') {
+      if (ipa[ipaIndex] === 'd' && ipa[ipaIndex + 1] === 'ʒ' && ipa[ipaIndex + 2] === 'ː') {
         const nextIpa = ipa.slice(ipaIndex + 3, ipaIndex + 5);
 
         if (!/i|ˈi|j|ˈj/.test(nextIpa)) {
