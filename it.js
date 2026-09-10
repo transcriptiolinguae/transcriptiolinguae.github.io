@@ -1836,14 +1836,26 @@ if (ipa[ipaIndex] === 'ˈ' || ipa[ipaIndex] === 'ˌ') {
   }
 
   
-
+  /*
+  
   // If mapping finished but IPA wasn't fully consumed, or vice versa → stop
   if (ipaIndex < ipa.length - 1 || i < text.length - 1) {
     // delete
     // console.warn(`Partial mapping detected for "${text}" (IPA: "${ipa}")`);
     return null; // indicate failure to map
   }
+*/
 
+if (ipaIndex !== ipa.length || i !== text.length) {
+  return null;
+}
+
+
+
+
+  
   return result.join('');
 
 }
+  
+
