@@ -93,7 +93,7 @@ export function validateOrReturnOriginal(originalWord, mappedString) {
 
 export function applyG2PMapping(text, ipa) {
 
-   ipa = ipa
+  
     .replace(/rɾ/g, 'rː')
     .replace(/kk/g, 'kː')
     .replace(/ɲɲ/g, 'ɲː')
