@@ -1809,7 +1809,7 @@ if (
 
 
 
-
+/*
 if (ipa[ipaIndex] === 'ˈ' || ipa[ipaIndex] === 'ˌ') {
   if (ipaIndex + 1 >= ipa.length) {
     return null;
@@ -1824,12 +1824,12 @@ if (ipa[ipaIndex] === 'ˈ' || ipa[ipaIndex] === 'ˌ') {
   i++;
   continue;
 }
-
+*/
 
 
     
 
-/*
+
 
 if (ipa[ipaIndex] === 'ˈ' || ipa[ipaIndex] === 'ˌ') {
   const stress = ipa[ipaIndex];
@@ -1840,7 +1840,7 @@ if (ipa[ipaIndex] === 'ˈ' || ipa[ipaIndex] === 'ˌ') {
   result.push(`${text[i]}(${ipa[ipaIndex]})`);
 }
 
-*/
+
        
     ipaIndex++;
     i++;
